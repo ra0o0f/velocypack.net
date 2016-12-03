@@ -1,0 +1,33 @@
+﻿{
+  "version": "0.1.0",
+  "title": "ArangoDB VelocyPack",
+  "description": ".NET implementation for ArangoDB VelocyPack",
+  "language": "en-US",
+  "authors": [ "raoof hojat" ],
+  "packOptions": {
+    "projectUrl": "https://github.com/ra0o0f/velocypack.net",
+    "tags": [ "ArangoDB", "Arango", "VelocyPack", "Serialization", "Compact" ],
+    "licenseUrl": "https://raw.github.com/ra0o0f/velocypack.net/master/LICENSE.md",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/ra0o0f/velocypack.net"
+    }
+  },
+  "frameworks": {
+    "netstandard1.1": {
+      "buildOptions": {
+        //"xmlDoc": true,
+        "define": [
+          "NETSTANDARD1_1",
+          "PORTABLE"
+        ]
+      },
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1",
+        "Newtonsoft.Json": "9.0.1",
+        "System.Collections.Concurrent": "4.0.12",
+        "System.Runtime.Numerics": "4.0.1"
+      }
+    }
+  }
+}
