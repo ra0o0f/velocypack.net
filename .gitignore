@@ -12,8 +12,7 @@
 *.nuget.props
 *.nuget.targets
 
-docs/book/_book
-node_modules
+
 
 [Dd]ebug/
 [Rr]elease/
@@ -21,8 +20,7 @@ x64/
 build/
 [Bb]in/
 [Oo]bj/
-ClientTesting/
-NugetPackaging/
+VelocyConsole/
 
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
 !packages/*/build/
@@ -33,7 +31,7 @@ NugetPackaging/
 .vs/
 packages/
 
-ArangoDB.Client_ForTest.sln
+ArangoDB.VelocyPack_ForTest.sln
 
 *_i.c
 *_p.c

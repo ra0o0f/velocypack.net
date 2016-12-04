@@ -292,6 +292,7 @@ namespace ArangoDB.VelocyPack
             return Convert.ToSingle(Value(), CultureInfo.InvariantCulture);
         }
 
+        [CLSCompliant(false)]
         public sbyte? ToSByte()
         {
             if (IsType(SliceType.Null))
@@ -332,6 +333,7 @@ namespace ArangoDB.VelocyPack
             return Convert.ToByte(Value(), CultureInfo.InvariantCulture);
         }
 
+        [CLSCompliant(false)]
         public ushort? ToUInt16()
         {
             if (IsType(SliceType.Null))
@@ -340,6 +342,7 @@ namespace ArangoDB.VelocyPack
             return Convert.ToUInt16(Value(), CultureInfo.InvariantCulture);
         }
 
+        [CLSCompliant(false)]
         public uint? ToUInt32()
         {
             if (IsType(SliceType.Null))
@@ -348,6 +351,7 @@ namespace ArangoDB.VelocyPack
             return Convert.ToUInt32(Value(), CultureInfo.InvariantCulture);
         }
 
+        [CLSCompliant(false)]
         public ulong? ToUInt64()
         {
             if (IsType(SliceType.Null))

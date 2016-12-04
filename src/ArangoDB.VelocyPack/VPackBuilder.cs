@@ -133,6 +133,7 @@ namespace ArangoDB.VelocyPack
             });
         }
 
+        [CLSCompliant(false)]
         public VPackBuilder AddCompactUInt(ulong? value)
         {
             return WrapAdd(value, () =>
@@ -160,6 +161,7 @@ namespace ArangoDB.VelocyPack
             });
         }
 
+        [CLSCompliant(false)]
         public VPackBuilder Add(sbyte? value)
         {
             return WrapAdd(value, () => AppendSByte(value.Value));
@@ -175,16 +177,18 @@ namespace ArangoDB.VelocyPack
             return WrapAdd(value, () => AppendShort(value.Value));
         }
 
+        [CLSCompliant(false)]
         public VPackBuilder Add(ushort? value)
         {
             return WrapAdd(value, () => AppendUShort(value.Value));
         }
-
+        
         public VPackBuilder Add(int? value)
         {
             return WrapAdd(value, () => AppendInt(value.Value));
         }
 
+        [CLSCompliant(false)]
         public VPackBuilder Add(uint? value)
         {
             return WrapAdd(value, () => AppendUInt(value.Value));
@@ -195,6 +199,7 @@ namespace ArangoDB.VelocyPack
             return WrapAdd(value, () => AppendLong(value.Value));
         }
 
+        [CLSCompliant(false)]
         public VPackBuilder Add(ulong? value)
         {
             return WrapAdd(value, () => AppendULong(value.Value));
@@ -282,6 +287,7 @@ namespace ArangoDB.VelocyPack
             });
         }
 
+        [CLSCompliant(false)]
         public VPackBuilder AddCompactUInt(string attribute, ulong? value)
         {
             return WrapAdd(attribute, value, () =>
@@ -309,6 +315,7 @@ namespace ArangoDB.VelocyPack
             });
         }
 
+        [CLSCompliant(false)]
         public VPackBuilder Add(string attribute, sbyte? value)
         {
             return WrapAdd(attribute, value, () => AppendSByte(value.Value));
@@ -324,6 +331,7 @@ namespace ArangoDB.VelocyPack
             return WrapAdd(attribute, value, () => AppendShort(value.Value));
         }
 
+        [CLSCompliant(false)]
         public VPackBuilder Add(string attribute, ushort? value)
         {
             return WrapAdd(attribute, value, () => AppendUShort(value.Value));
@@ -334,6 +342,7 @@ namespace ArangoDB.VelocyPack
             return WrapAdd(attribute, value, () => AppendInt(value.Value));
         }
 
+        [CLSCompliant(false)]
         public VPackBuilder Add(string attribute, uint? value)
         {
             return WrapAdd(attribute, value, () => AppendUInt(value.Value));
@@ -344,6 +353,7 @@ namespace ArangoDB.VelocyPack
             return WrapAdd(attribute, value, () => AppendLong(value.Value));
         }
 
+        [CLSCompliant(false)]
         public VPackBuilder Add(string attribute, ulong? value)
         {
             return WrapAdd(attribute, value, () => AppendULong(value.Value));
