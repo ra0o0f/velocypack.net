@@ -213,7 +213,7 @@ namespace ArangoDB.VelocyPack.Test
         [Fact]
         public void SerializeHashSetNotSameType()
         {
-            HashSet<object> hashSet = new HashSet<object> { 1d, 2, 3L };
+            HashSet<object> hashSet = new HashSet<object> { double.MaxValue, int.MaxValue, long.MaxValue };
             var s = VPack.Serialize(hashSet);
             var d = VPack.Deserialize<HashSet<object>>(s);
 

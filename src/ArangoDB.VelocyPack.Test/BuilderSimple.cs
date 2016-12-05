@@ -342,9 +342,9 @@ namespace ArangoDB.VelocyPack.Test
         {
             var slice = new VPackBuilder()
                    .Add(SliceType.Array)
-                   .Add(1d)
-                   .Add((int?)2)
-                   .Add(3L)
+                   .Add(double.MaxValue)
+                   .Add(int.MaxValue)
+                   .Add(long.MaxValue)
                    .Close()
                    .Slice();
 
@@ -353,20 +353,20 @@ namespace ArangoDB.VelocyPack.Test
 
             Assert.True(slice[0].IsType(SliceType.Double));
             Assert.Equal(slice[0].Value().GetType(), typeof(double));
-            Assert.Equal(slice[0].Value(), 1d);
-            Assert.Equal(slice[0].ToDouble(), 1d);
+            Assert.Equal(slice[0].Value(), double.MaxValue);
+            Assert.Equal(slice[0].ToDouble(), double.MaxValue);
 
             Assert.True(slice[1].IsType(SliceType.Int));
             Assert.Equal(slice[1].TypeCode, 0x23);
             Assert.Equal(slice[1].Value().GetType(), typeof(int));
-            Assert.Equal(slice[1].Value(), 2);
-            Assert.Equal(slice[1].ToDouble(), 2);
+            Assert.Equal(slice[1].Value(), int.MaxValue);
+            Assert.Equal(slice[1].ToDouble(), int.MaxValue);
 
             Assert.True(slice[2].IsType(SliceType.Int));
             Assert.Equal(slice[2].TypeCode, 0x27);
             Assert.Equal(slice[2].Value().GetType(), typeof(long));
-            Assert.Equal(slice[2].Value(), 3L);
-            Assert.Equal(slice[2].ToDouble(), 3L);
+            Assert.Equal(slice[2].Value(), long.MaxValue);
+            Assert.Equal(slice[2].ToDouble(), long.MaxValue);
         }
     }
 }

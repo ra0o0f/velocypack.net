@@ -164,45 +164,61 @@ namespace ArangoDB.VelocyPack
         [CLSCompliant(false)]
         public VPackBuilder Add(sbyte? value)
         {
-            return WrapAdd(value, () => AppendSByte(value.Value));
+            return options.IsBuildCompactIntegers() 
+                ? AddCompactInt(value)
+                : WrapAdd(value, () => AppendSByte(value.Value));
         }
 
         public VPackBuilder Add(byte? value)
         {
-            return WrapAdd(value, () => AppendByte(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactUInt(value)
+                : WrapAdd(value, () => AppendByte(value.Value));
         }
 
         public VPackBuilder Add(short? value)
         {
-            return WrapAdd(value, () => AppendShort(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactInt(value)
+                : WrapAdd(value, () => AppendShort(value.Value));
         }
 
         [CLSCompliant(false)]
         public VPackBuilder Add(ushort? value)
         {
-            return WrapAdd(value, () => AppendUShort(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactUInt(value)
+                : WrapAdd(value, () => AppendUShort(value.Value));
         }
         
         public VPackBuilder Add(int? value)
         {
-            return WrapAdd(value, () => AppendInt(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactInt(value)
+                : WrapAdd(value, () => AppendInt(value.Value));
         }
 
         [CLSCompliant(false)]
         public VPackBuilder Add(uint? value)
         {
-            return WrapAdd(value, () => AppendUInt(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactUInt(value)
+                : WrapAdd(value, () => AppendUInt(value.Value));
         }
 
         public VPackBuilder Add(long? value)
         {
-            return WrapAdd(value, () => AppendLong(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactInt(value)
+                : WrapAdd(value, () => AppendLong(value.Value));
         }
 
         [CLSCompliant(false)]
         public VPackBuilder Add(ulong? value)
         {
-            return WrapAdd(value, () => AppendULong(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactUInt(value)
+                : WrapAdd(value, () => AppendULong(value.Value));
         }
 
         public VPackBuilder Add(string value)
@@ -318,45 +334,61 @@ namespace ArangoDB.VelocyPack
         [CLSCompliant(false)]
         public VPackBuilder Add(string attribute, sbyte? value)
         {
-            return WrapAdd(attribute, value, () => AppendSByte(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactInt(attribute, value)
+                : WrapAdd(attribute, value, () => AppendSByte(value.Value));
         }
 
         public VPackBuilder Add(string attribute, byte? value)
         {
-            return WrapAdd(attribute, value, () => AppendByte(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactUInt(attribute, value)
+                : WrapAdd(attribute, value, () => AppendByte(value.Value));
         }
 
         public VPackBuilder Add(string attribute, short? value)
         {
-            return WrapAdd(attribute, value, () => AppendShort(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactInt(attribute, value)
+                : WrapAdd(attribute, value, () => AppendShort(value.Value));
         }
 
         [CLSCompliant(false)]
         public VPackBuilder Add(string attribute, ushort? value)
         {
-            return WrapAdd(attribute, value, () => AppendUShort(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactUInt(attribute, value)
+                : WrapAdd(attribute, value, () => AppendUShort(value.Value));
         }
 
         public VPackBuilder Add(string attribute, int? value)
         {
-            return WrapAdd(attribute, value, () => AppendInt(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactInt(attribute, value)
+                : WrapAdd(attribute, value, () => AppendInt(value.Value));
         }
 
         [CLSCompliant(false)]
         public VPackBuilder Add(string attribute, uint? value)
         {
-            return WrapAdd(attribute, value, () => AppendUInt(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactUInt(attribute, value)
+                : WrapAdd(attribute, value, () => AppendUInt(value.Value));
         }
 
         public VPackBuilder Add(string attribute, long? value)
         {
-            return WrapAdd(attribute, value, () => AppendLong(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactInt(attribute, value)
+                : WrapAdd(attribute, value, () => AppendLong(value.Value));
         }
 
         [CLSCompliant(false)]
         public VPackBuilder Add(string attribute, ulong? value)
         {
-            return WrapAdd(attribute, value, () => AppendULong(value.Value));
+            return options.IsBuildCompactIntegers()
+                ? AddCompactUInt(attribute, value)
+                : WrapAdd(attribute, value, () => AppendULong(value.Value));
         }
 
         public VPackBuilder Add(string attribute, string value)

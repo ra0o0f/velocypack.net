@@ -10,11 +10,13 @@ namespace ArangoDB.VelocyPack
     {
         private bool _buildUnindexedArrays;
         private bool _buildUnindexedObjects;
+        private bool _buildCompactIntegers;
 
         public DefaultVPackBuilderOptions()
         {
             _buildUnindexedArrays = false;
             _buildUnindexedObjects = false;
+            _buildCompactIntegers = true;
         }
         
         public bool IsBuildUnindexedArrays()
@@ -35,6 +37,16 @@ namespace ArangoDB.VelocyPack
         public void SetBuildUnindexedObjects(bool buildUnindexedObjects)
         {
             _buildUnindexedObjects = buildUnindexedObjects;
+        }
+
+        public bool IsBuildCompactIntegers()
+        {
+            return _buildCompactIntegers;
+        }
+
+        public void SetBuildCompactIntegers(bool buildCompactIntegers)
+        {
+            _buildCompactIntegers = buildCompactIntegers;
         }
     }
 }
