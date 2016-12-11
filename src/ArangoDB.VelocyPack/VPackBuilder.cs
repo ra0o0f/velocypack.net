@@ -164,7 +164,7 @@ namespace ArangoDB.VelocyPack
         [CLSCompliant(false)]
         public VPackBuilder Add(sbyte? value)
         {
-            return options.IsBuildCompactIntegers() 
+            return options.IsBuildCompactIntegers()
                 ? AddCompactInt(value)
                 : WrapAdd(value, () => AppendSByte(value.Value));
         }
@@ -190,7 +190,7 @@ namespace ArangoDB.VelocyPack
                 ? AddCompactUInt(value)
                 : WrapAdd(value, () => AppendUShort(value.Value));
         }
-        
+
         public VPackBuilder Add(int? value)
         {
             return options.IsBuildCompactIntegers()
@@ -1122,7 +1122,7 @@ namespace ArangoDB.VelocyPack
             int offsetSize;
             // can be 1, 2, 4 or 8 for the byte width of the offsets,
             // the byte length and the number of subvalues:
-            if ((size - 1 - tos) + _in.Count - 6 <= 0xff)
+            if (size - tos + _in.Count - 6 <= 0xff)
             {
                 // We have so far used _pos - tos bytes, including the reserved 8
                 // bytes for byte length and number of subvalues. In the 1-byte
